@@ -191,6 +191,13 @@ type Query {
       """
       configuration: "postgresql_config"
     )
+  chatbots_by_user(clerk_user_id: String!): [Chatbots]
+    @dbquery(
+      type: "postgresql"
+      schema: "public"
+      table: "chatbots"
+      configuration: "postgresql_config"
+    )
   " Queries for type 'Guests' "
   guests(id: Int!): Guests
     @dbquery(
