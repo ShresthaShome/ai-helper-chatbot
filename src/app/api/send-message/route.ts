@@ -99,7 +99,7 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({
-      id: Date.now(), //aiMessageResponse.data.insertMessages.id,
+      id: aiMessageResponse.data.insertMessages.id, //Date.now(),
       content: "aiResponse",
     });
   } catch (error) {
