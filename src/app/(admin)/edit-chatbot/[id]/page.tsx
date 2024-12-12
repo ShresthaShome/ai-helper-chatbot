@@ -18,6 +18,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { FormEvent, use, useEffect, useState } from "react";
 import { toast } from "sonner";
+import Loading from "../../loading";
 
 export default function EditChatbot({
   params,
@@ -46,7 +47,7 @@ export default function EditChatbot({
     GetChatbotByIdResponse,
     GetChatbotByIdVariables
   >(GET_CHATBOT_BY_ID, {
-    variables: { id },
+    variables: { id: Number(id) },
   });
 
   useEffect(() => {
@@ -104,12 +105,7 @@ export default function EditChatbot({
     });
   };
 
-  if (loading)
-    return (
-      <div>
-        <Avatar seed="Ullas Boss AI support chatbot" />
-      </div>
-    );
+  if (loading) return <Loading />;
 
   if (error) return <p>Error: {error?.message}</p>;
 

@@ -28,7 +28,6 @@ export default async function startNewChat(
       },
     });
     const guestId = guestResult.data?.insertGuests.id!;
-    console.log("guestId: ", guestId);
 
     const chatSessionResult = await client.mutate<
       InsertChatSessionResponse,
@@ -41,7 +40,6 @@ export default async function startNewChat(
       },
     });
     const chatSessionId = chatSessionResult.data?.insertChat_sessions.id!;
-    console.log("chatSessionId: ", chatSessionId);
 
     await client.mutate({
       mutation: INSERT_MESSAGE,

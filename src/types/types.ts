@@ -43,7 +43,7 @@ export interface GetChatbotByIdResponse {
 }
 
 export interface GetChatbotByIdVariables {
-  id: string;
+  id: number;
 }
 
 export interface GetChatbotsByUserData {
@@ -94,4 +94,15 @@ export interface InsertChatSessionResponse {
 export interface InsertChatSessionVariables {
   guestId: number;
   chatbotId: number;
+}
+
+export interface GetMessagesByChatSessionIdResponse {
+  chat_sessions: {
+    id: number;
+    messages: Message[];
+  };
+}
+
+export interface GetMessagesByChatSessionIdVariables {
+  chatSessionId: number;
 }
