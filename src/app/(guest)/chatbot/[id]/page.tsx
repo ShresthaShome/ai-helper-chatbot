@@ -161,6 +161,7 @@ export default function ChatbotPage({
             return {
               ...msg,
               content: result.message,
+              id: result.id,
             };
           }
           return msg;
