@@ -77,3 +77,21 @@ export interface GetChatSessionMessagesResponse {
 export interface GetChatSessionMessagesVariables {
   id: number;
 }
+
+export interface InsertGuestResponse {
+  insertGuests: Guest;
+}
+
+export interface InsertGuestVariables {
+  name: string;
+  email: string;
+}
+
+export interface InsertChatSessionResponse {
+  insertChat_sessions: ChatSession;
+}
+
+export interface InsertChatSessionVariables {
+  guestId: number;
+  chatbotId: number;
+}

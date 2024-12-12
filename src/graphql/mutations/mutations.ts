@@ -44,3 +44,41 @@ export const UPDATE_CHATBOT = gql`
     }
   }
 `;
+
+export const INSERT_MESSAGE = gql`
+  mutation InsertMessage(
+    $chat_session_id: Int!
+    $content: String!
+    $sender: String!
+  ) {
+    insertMessages(
+      chat_session_id: $chat_session_id
+      content: $content
+      sender: $sender
+    ) {
+      id
+      chat_session_id
+      content
+      created_at
+      sender
+    }
+  }
+`;
+
+export const INSERT_GUEST = gql`
+  mutation InsertGuest($name: String!, $email: String!) {
+    insertGuests(name: $name, email: $email) {
+      id
+      name
+      email
+    }
+  }
+`;
+
+export const INSERT_CHAT_SESSION = gql`
+  mutation InsertChatSession($guestId: Int!, $chatbotId: Int!) {
+    insertChat_sessions(guest_id: $guestId, chatbot_id: $chatbotId) {
+      id
+    }
+  }
+`;
