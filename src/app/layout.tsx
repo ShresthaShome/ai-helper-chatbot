@@ -5,9 +5,28 @@ import ApolloProviderWrapper from "@/components/ApolloProvider";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
-  title: "Assistly AI Chatbot",
+  title: "Assistly AI Chatbot Service",
   description:
-    "Created by BOSS Ullas Shome. Copyright © 2024. All rights reserved.",
+    "Created by BOSS Ullas Shome. Copyright © 2025. All rights reserved.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "icon",
+        url: "/favicon-16x16.png",
+      },
+      {
+        rel: "icon",
+        url: "/favicon-32x32.png",
+      },
+      {
+        rel: "manifest",
+        url: "/site.webmanifest",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
